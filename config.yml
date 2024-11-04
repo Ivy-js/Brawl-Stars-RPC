@@ -14,23 +14,31 @@
 
 # This is the configuration file for the Brawl Stars Discord Rich Presence bot.
 discord:
-  clientId: "YOUR_DISCORD_CLIENT_ID" # Replace with your actual Discord client ID
-  buttons:
+  clientId: "" # Replace with your actual Discord client ID
+  buttons: # The buttons that will be displayed on the presence.
     - label: "Button 1"
-      url: "https://example.com/button1"
+      url: "https://example.com/button1" 
     - label: "Button 2"
-      url: "https://example.com/button2"
+      url: "https://example.com/button2" 
 
-api:
-  playerUrl: "https://api.brawlstars.com/v1/players/PLAYER_ID" # Replace with your actual PlayerID 
-  avatarUrl: "https://api.brawlify.com/v1/icons" # Replace with your actual avatar API URL
+img: 
+  avatar: "" # The URL of the avatar image that will be displayed on the presence.
 
+# The tag is the player tag of the account you want to track.
+brawlstars:
+  tag: "%23" # The player tag of the account you want to track. Write your tag without the # symbol.
+  api_key: "" # Replace with your actual Brawl Stars API key Link https://developer.brawlstars.com/#/documentation
+
+# The bot will automatically reconnect if the connection is lost.
+MAX_RETRIES : 10
+
+# The presence object is the configuration for the Discord Rich Presence.
 presence:
-  details: "Your Presence Details"
-  stateTemplate: "{trophies}🏆 | {name}"
-  largeImageTextTemplate: "{name}"
-  smallImageKey: "https://example.com/path/to/small/image.png"
-  smallImageTextTemplate: "Club : {clubName}"
+  details: "Your Presence Details" # The details that will be displayed on the presence.
+  stateTemplate: "{trophies}🏆 | {name}" # The State Template
+  largeImageTextTemplate: "{name}" # The text that will be displayed when hovering over the large image.
+  smallImageKey: "https://example.com/path/to/small/image.png" # The key of the small image that will be displayed on the presence.
+  smallImageTextTemplate: "Club : {clubName}" # The text that will be displayed when hovering over the small image.
   updateInterval: 60 # in seconds
 
 
